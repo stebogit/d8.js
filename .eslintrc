@@ -1,10 +1,6 @@
 {
-  "extends": [
-    "prettier"
-  ],
-  "plugins": [
-    "jest"
-  ],
+  "extends": ["prettier"],
+  "plugins": ["jest"],
   "env": {
     "browser": true,
     "jest/globals": true

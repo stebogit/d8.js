@@ -1,5 +1,5 @@
 // Italian [it]
-import dayjs from 'dayjs'
+import dayjs from 'dayjs';
 
 const locale = {
   name: 'it',
@@ -15,7 +15,7 @@ const locale = {
     L: 'DD/MM/YYYY',
     LL: 'D MMMM YYYY',
     LLL: 'D MMMM YYYY HH:mm',
-    LLLL: 'dddd D MMMM YYYY HH:mm'
+    LLLL: 'dddd D MMMM YYYY HH:mm',
   },
   relativeTime: {
     future: 'tra %s',
@@ -23,19 +23,18 @@ const locale = {
     s: 'qualche secondo',
     m: 'un minuto',
     mm: '%d minuti',
-    h: 'un\' ora',
+    h: "un' ora",
     hh: '%d ore',
     d: 'un giorno',
     dd: '%d giorni',
     M: 'un mese',
     MM: '%d mesi',
     y: 'un anno',
-    yy: '%d anni'
+    yy: '%d anni',
   },
-  ordinal: n => `${n}º`
-}
+  ordinal: (n) => `${n}º`,
+};
 
-dayjs.locale(locale, null, true)
+dayjs.locale(locale, null, true);
 
-export default locale
-
+export default locale;

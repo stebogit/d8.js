@@ -1,5 +1,15 @@
-# Ignore artifacts:
-build
-coverage
+# npm
+/node_modules
+package-lock.json
 
-sandbox
+# build
+/build
+/coverage
+/locale
+/plugin
+/d8js.min.js
+/esm
+/index.d.ts
+
+#dev
+/sandbox

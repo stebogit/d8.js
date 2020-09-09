@@ -7,8 +7,7 @@
   "scripts": {
     "test": "jest",
     "watch": "jest --watch",
-    "lint": "./node_modules/.bin/eslint src/* test/* build/*",
-    "prettier": "prettier --write \"docs/**/*.md\"",
+    "lint": "prettier --write .",
     "babel": "cross-env BABEL_ENV=build babel src --out-dir esm --copy-files && node build/esm",
     "build": "cross-env BABEL_ENV=build node build && npm run size",
     "sauce": "npx karma start karma.sauce.conf.js",
@@ -84,7 +83,7 @@
     "moment-timezone": "0.5.31",
     "ncp": "^2.0.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.16.1",
+    "prettier": "2.1.1",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^4.0.0-beta.4",
     "rollup-plugin-uglify": "^3.0.0",
