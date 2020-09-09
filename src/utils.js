@@ -1,4 +1,4 @@
-import { MS, S, MIN, H, D, W, M, Q, Y, DATE } from './constant';
+import {MS, S, MIN, H, D, W, M, Q, Y, DATE} from './constant';
 
 const padStart = (string, length, pad) => {
   const s = String(string);

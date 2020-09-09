@@ -397,7 +397,7 @@ dayjs.locale = parseLocale;
 
 dayjs.isDayjs = isDayjs;
 
-dayjs.unix = (timestamp) => dayjs(timestamp * 1e3);
+dayjs.unix = (timestamp) => dayjs(timestamp * MILLISECONDS_A_SECOND);
 
 dayjs.en = LoadedLocale[Locale];
 dayjs.Ls = LoadedLocale;
