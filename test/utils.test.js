@@ -1,5 +1,5 @@
 import Utils from '../src/utils';
-import {SECONDS_A_HOUR} from '../src/constant';
+import {MINUTES_A_HOUR} from '../src/constant';
 
 const {prettyUnit, padStart, padZoneStr} = Utils;
 
@@ -23,17 +23,17 @@ it('PrettyUnit', () => {
 
 it('PadZoneStr', () => {
   const instance = {};
-  instance.utcOffset = () => 0;
+  instance.utcOffset = () => 0 * -1;
   expect(padZoneStr(instance)).toBe('+00:00');
-  instance.utcOffset = () => SECONDS_A_HOUR * -1;
+  instance.utcOffset = () => MINUTES_A_HOUR * -1;
   expect(padZoneStr(instance)).toBe('-01:00');
-  instance.utcOffset = () => -1 * SECONDS_A_HOUR * -1;
+  instance.utcOffset = () => -1 * MINUTES_A_HOUR * -1;
   expect(padZoneStr(instance)).toBe('+01:00');
-  instance.utcOffset = () => -10 * SECONDS_A_HOUR * -1;
+  instance.utcOffset = () => -10 * MINUTES_A_HOUR * -1;
   expect(padZoneStr(instance)).toBe('+10:00');
-  instance.utcOffset = () => 10 * SECONDS_A_HOUR * -1;
+  instance.utcOffset = () => 10 * MINUTES_A_HOUR * -1;
   expect(padZoneStr(instance)).toBe('-10:00');
-  instance.utcOffset = () => (-5 * SECONDS_A_HOUR - 30) * -1;
+  instance.utcOffset = () => (-5 * MINUTES_A_HOUR - 30) * -1;
   expect(padZoneStr(instance)).toBe('+05:30');
 });
 
