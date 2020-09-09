@@ -1,8 +1,6 @@
 import Utils from '../src/utils';
 
-const prettyUnit = Utils.p;
-const padStart = Utils.s;
-const padZoneStr = Utils.z;
+const {prettyUnit, padStart, padZoneStr} = Utils;
 
 it('PrettyUnit', () => {
   expect(prettyUnit('Days')).toBe('day');

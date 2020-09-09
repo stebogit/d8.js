@@ -1,4 +1,4 @@
-import * as C from './constant';
+import { MS, S, MIN, H, D, W, M, Q, Y, DATE } from './constant';
 
 const padStart = (string, length, pad) => {
   const s = String(string);
@@ -18,9 +18,9 @@ const monthDiff = (a, b) => {
   // function from moment.js in order to keep the same result
   if (a.date() < b.date()) return -monthDiff(b, a);
   const wholeMonthDiff = (b.year() - a.year()) * 12 + (b.month() - a.month());
-  const anchor = a.clone().add(wholeMonthDiff, C.M);
+  const anchor = a.clone().add(wholeMonthDiff, M);
   const c = b - anchor < 0;
-  const anchor2 = a.clone().add(wholeMonthDiff + (c ? -1 : 1), C.M);
+  const anchor2 = a.clone().add(wholeMonthDiff + (c ? -1 : 1), M);
   return +(-(wholeMonthDiff + (b - anchor) / (c ? anchor - anchor2 : anchor2 - anchor)) || 0);
 };
 
@@ -28,16 +28,16 @@ const absFloor = (n) => (n < 0 ? Math.ceil(n) || 0 : Math.floor(n));
 
 const prettyUnit = (u) => {
   const special = {
-    M: C.M,
-    y: C.Y,
-    w: C.W,
-    d: C.D,
-    D: C.DATE,
-    h: C.H,
-    m: C.MIN,
-    s: C.S,
-    ms: C.MS,
-    Q: C.Q,
+    M: M,
+    y: Y,
+    w: W,
+    d: D,
+    D: DATE,
+    h: H,
+    m: MIN,
+    s: S,
+    ms: MS,
+    Q: Q,
   };
   return (
     special[u] ||
@@ -50,10 +50,10 @@ const prettyUnit = (u) => {
 const isUndefined = (s) => s === undefined;
 
 export default {
-  s: padStart,
-  z: padZoneStr,
-  m: monthDiff,
-  a: absFloor,
-  p: prettyUnit,
-  u: isUndefined,
+  padStart,
+  padZoneStr,
+  monthDiff,
+  absFloor,
+  prettyUnit,
+  isUndefined,
 };
