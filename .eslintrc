@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "prettier"
+  ],
+  "plugins": [
+    "jest"
+  ],
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "globals": {
+    "window": true,
+    "d8js": true
+  }
+}
